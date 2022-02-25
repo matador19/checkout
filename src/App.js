@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import {BrowserRouter as Router , Routes, Route, Navigate} from "react-router-dom"
+import Billing from "./components/Billing";
+import Cart from "./components/Cart";
+import PaymentOption from "./components/PaymentOption";
 function App() {
+  const [showBilling,setshowBilling]=useState(true)
+  const onBilling=()=>{
+    setshowBilling(!showBilling)
+    console.log(showBilling)
+    window.location.href ='/paymentprovider'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+<div className="container">
+<Routes>
+
+  <Route path='/' element={
+  <div className="row gx-5">
+  <Billing onBilling={onBilling}></Billing>
+  <Cart></Cart>
+  </div>}
+  />
+  <Route path='/paymentprovider' element={<PaymentOption/>}/>
+  </Routes>
+</div>
+    </Router>
   );
 }
 

@@ -1,0 +1,7 @@
+#Billing{
+    margin-top: 20px;
+    margin-right: 30px;
+    box-shadow: 10px 10px 10px 10px rgba(35, 75, 255, 0.83);
+  transition: 0.3s;
+  border-radius: 10px; /* 5px rounded corners */
+}
