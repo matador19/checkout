@@ -32,7 +32,6 @@ const Billing = ({onBilling}) => {
     }
 
   return (
-    
     <div id="Billing" className="col-md-5 order-md-1">
         <h1 style={{fontSize:25}}>Billing Address</h1>
         <form className='add-form' onSubmit={onSubmit}>
