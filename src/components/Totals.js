@@ -5,7 +5,7 @@ const Totals = () => {
     const [Shipping,setShipping] = useState(10)
     const [Tax,setTax]=useState(10)
 
-    
+   
   return (
     <div>
         <ul>

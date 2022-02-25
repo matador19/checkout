@@ -3,7 +3,7 @@ import {BrowserRouter as Router , Routes, Route, Navigate} from "react-router-do
 import Billing from "./components/Billing";
 import Cart from "./components/Cart";
 import PaymentOption from "./components/PaymentOption";
-import success from "./components/success";
+import Success from "./components/Success";
 function App() {
   const [showBilling,setshowBilling]=useState(true)
   const onBilling=()=>{
@@ -23,6 +23,7 @@ function App() {
   </div>}
   />
   <Route path='/paymentprovider' element={<PaymentOption/>}/>
+  <Route path='/status' element={<Success/>}/>
   </Routes>
 </div>
     </Router>
