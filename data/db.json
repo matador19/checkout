@@ -10,6 +10,17 @@
       "phone": "13125424",
       "postal_Address": "po box",
       "id": 1
+    },
+    {
+      "first_Name": "",
+      "last_Name": "",
+      "email": "",
+      "street_Address": "",
+      "country": "",
+      "city": "",
+      "phone": "",
+      "postal_Address": "",
+      "id": 2
     }
   ],
   "cart": [
@@ -30,6 +41,30 @@
       "item": "Item 3",
       "desc": "This is item 3",
       "price": 400
+    },
+    {
+      "id": 4,
+      "item": "OMO",
+      "desc": "HUTOA MADOA YOTE",
+      "price": 300
+    },
+    {
+      "id": 5,
+      "item": "CLOSE UP",
+      "desc": "WHITENS YOUR TEETH",
+      "price": 250
+    },
+    {
+      "id": 6,
+      "item": "JIK",
+      "desc": "1 LTR STAIN REMOVER",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "item": "OMO",
+      "desc": "HUTOA MADOA YOTE",
+      "price": 300
     }
   ]
 }
