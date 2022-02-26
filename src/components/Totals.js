@@ -1,17 +1,20 @@
-import { useState } from "react"
-const Totals = () => {
-    const [Subtotal,setSubtotal] = useState(10)
+import { useEffect, useState } from "react"
+const Totals = ({cartprice}) => {
+    const [Subtotal,setSubtotal] = useState()
     const [Discount,setDiscount] = useState(10)
     const [Shipping,setShipping] = useState(10)
     const [Tax,setTax]=useState(10)
 
-   
+   useEffect(()=>{
+       const sum = cartprice.reduce(function(prev,curr){return prev=prev+curr.price},0)
+       setSubtotal(sum)
+   },[cartprice])
   return (
     <div>
         <ul>
         <li className="list-group-item d-flex justify-content-between">
             <h6>Sub total</h6>
-            <span >{Subtotal}</span>
+            <span>{Subtotal}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between ">
             <h6>Discount</h6>

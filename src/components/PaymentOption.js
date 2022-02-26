@@ -7,7 +7,6 @@ const PaymentOption = () => {
 
 const onSubmit=(e)=>{
   e.preventDefault();
-  console.log(phoneNumber)
 }
 
   return (

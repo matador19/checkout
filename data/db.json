@@ -1,0 +1,35 @@
+{
+  "billing": [
+    {
+      "first_Name": "B",
+      "last_Name": "B",
+      "email": "B@B.com",
+      "street_Address": "124",
+      "country": "Kemya",
+      "city": "nairobi",
+      "phone": "13125424",
+      "postal_Address": "po box",
+      "id": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "item": "Item 1",
+      "desc": "This is item 1",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "item": "Item 2",
+      "desc": "This is item 2",
+      "price": 500
+    },
+    {
+      "id": 3,
+      "item": "Item 3",
+      "desc": "This is item 3",
+      "price": 400
+    }
+  ]
+}
