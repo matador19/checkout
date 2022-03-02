@@ -1,16 +1,11 @@
 import { useState } from "react";
-import {BrowserRouter as Router , Routes, Route, Navigate} from "react-router-dom"
+import {BrowserRouter as Router , Routes, Route} from "react-router-dom"
 import Billing from "./components/Billing";
 import Cart from "./components/Cart";
 import PaymentOption from "./components/PaymentOption";
-import Success from "./components/Success";
+import Success from "./components/success";
 function App() {
-  const [showBilling,setshowBilling]=useState(true)
-  const onBilling=()=>{
-    setshowBilling(!showBilling)
-    console.log(showBilling)
-    window.location.href ='/paymentprovider'
-  }
+ const [phone,setphone]=useState()
   return (
     <Router>
 <div className="container">
@@ -18,12 +13,12 @@ function App() {
 
   <Route path='/' element={
   <div className="row gx-5">
-  <Billing onBilling={onBilling}></Billing>
+  <Billing ></Billing>
   <Cart></Cart>
   </div>}
   />
-  <Route path='/paymentprovider' element={<PaymentOption/>}/>
-  <Route path='/status' element={<Success/>}/>
+  <Route  path='/paymentprovider' element={<PaymentOption phone={setphone}/>}/>
+  <Route  path='/status' element={<Success phone={phone}/>}/>
   </Routes>
 </div>
     </Router>

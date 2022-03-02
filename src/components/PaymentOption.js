@@ -1,19 +1,23 @@
-import { useState } from 'react'
+import { useState} from 'react'
+import { useNavigate} from 'react-router-dom'
 import './PaymentOption.css'
-const PaymentOption = () => {
+const PaymentOption = ({phone}) => {
   const [option,setOption]=useState('0')
-  const [phoneNumber,setphoneNumber]=useState()
-
+  const [phoneNumber,setphoneNumber]=useState('')
+  const navigate=useNavigate();
 
 const onSubmit=(e)=>{
   e.preventDefault();
+  phone(phoneNumber);
+  navigate('/status');
+
 }
 
   return (
     <div id='payment' className='container align-items-center col-md-5 mt-4' >
         <h3 className="mb-3">Payment method </h3>
         <div className="d-block my-3">
-        <label for="payment">Choose a payment provider:</label><br/>
+        <label htmlFor="payment">Choose a payment provider:</label><br/>
         <select name="payment" value={option} onChange={(e)=>{
           setOption(e.target.value)
           }
@@ -29,7 +33,7 @@ const onSubmit=(e)=>{
             <input className="form-control" type='text' placeholder='phone Number' value={phoneNumber} onChange={(e)=>setphoneNumber(e.target.value)}></input>
         </div>
         <div className="mb-2">
-        <input className="form-control btn btn-block" style={{background:'blue'}} type='Submit' value='Submit'></input>
+        <button className="form-control btn btn-block" style={{background:'blue'}} type='Submit'>submit</button>
         </div>
 
           </form>

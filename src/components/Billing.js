@@ -1,6 +1,7 @@
 import './Billing.css'
 import { useState } from "react"
-const Billing = ({onBilling}) => {
+import { useNavigate } from 'react-router-dom'
+const Billing = () => {
     const [biller,setbiller]=useState([])
     const [first_Name,setfirst_Name] = useState('')
     const [last_Name, setlast_Name] = useState('')
@@ -10,6 +11,7 @@ const Billing = ({onBilling}) => {
     const [city,setcity] = useState('')
     const [phone,setphone] = useState('')
     const [postal_Address,setpostal_Address]= useState('')
+    const navigate=useNavigate()
 
     //const [billing_info, setBillingInfo] ={}
 
@@ -26,7 +28,7 @@ const Billing = ({onBilling}) => {
             //console.log('something added')
         })
   
-        onBilling()
+        navigate('/paymentprovider');
 
         setfirst_Name('')
         setlast_Name('')
@@ -89,7 +91,7 @@ const Billing = ({onBilling}) => {
             <input  type='text' placeholder='Postal Address' className="form-control"  value={postal_Address} onChange={(e)=>setpostal_Address(e.target.value)}></input>
         </div>
         <div className="mb-2">
-        <input className="form-control btn btn-block" style={{background:'green'}} type='Submit' value='Submit'></input>
+        <button className="form-control btn btn-block" style={{background:'green'}}  value='Submit'>SUBMIT</button>
         </div>
         </form>
     </div>
