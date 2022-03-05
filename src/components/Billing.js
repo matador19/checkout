@@ -20,12 +20,12 @@ const Billing = () => {
     const onSubmit=(e)=>{
         const billing={first_Name,last_Name,email,street_Address,country,city,phone,postal_Address};
         e.preventDefault();
-        fetch('http://localhost:8000/billing',{
+        fetch('http://127.0.0.1:5000/addcustomer',{
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(billing)
         }).then(()=>{
-            //console.log('something added')
+            //console.log('sth added')
         })
   
         navigate('/paymentprovider');

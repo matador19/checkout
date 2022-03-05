@@ -18,7 +18,7 @@ function App() {
   </div>}
   />
   <Route  path='/paymentprovider' element={<PaymentOption phone={setphone}/>}/>
-  <Route  path='/status' element={<Success phone={phone}/>}/>
+  <Route  path='/status/:phone/:status' element={<Success />}/>
   </Routes>
 </div>
     </Router>

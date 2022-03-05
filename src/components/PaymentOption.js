@@ -1,16 +1,29 @@
-import { useState} from 'react'
-import { useNavigate} from 'react-router-dom'
+import { useState, useEffect} from 'react'
 import './PaymentOption.css'
 const PaymentOption = ({phone}) => {
   const [option,setOption]=useState('0')
   const [phoneNumber,setphoneNumber]=useState('')
-  const navigate=useNavigate();
+  const [total,settotal]=useState([])
+  const [sum,setsum]=useState(0);
+  useEffect(()=>{
+    fetch('http://localhost:5000/cart').then(res=>{
+      return res.json()
+    }).then(data=>{
+      console.log(data)
+      settotal(data)
+    })
+  },[])
+  useEffect(()=>{
+    const fun_sum = total.reduce(function(prev,curr){return prev=prev+curr.price},0)
+       setsum(fun_sum)
+  },[total])
 
 const onSubmit=(e)=>{
   e.preventDefault();
   phone(phoneNumber);
-  navigate('/status');
 
+  const url = 'http://localhost:3000/?phone='+phoneNumber+'&cost='+sum
+  window.location.href= url;
 }
 
   return (

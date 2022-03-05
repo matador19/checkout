@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 const Totals = ({cartprice}) => {
     const [Subtotal,setSubtotal] = useState(0)
     const [Discount,setDiscount] = useState(10)
-    const [Shipping,setShipping] = useState(10)
+    const [Shipping,setShipping] = useState(0)
     const [Tax,setTax]=useState(10)
 
    useEffect(()=>{
