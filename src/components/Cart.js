@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const Cart = () => {
     const[carts,setcarts]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/cart').then(res=>{
+        fetch('http://localhost:5000/getcart').then(res=>{
           return res.json()
         }).then(data=>{
           console.log(data)

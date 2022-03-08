@@ -6,7 +6,7 @@ const PaymentOption = ({phone}) => {
   const [total,settotal]=useState([])
   const [sum,setsum]=useState(0);
   useEffect(()=>{
-    fetch('http://localhost:5000/cart').then(res=>{
+    fetch('http://localhost:5000/getcart').then(res=>{
       return res.json()
     }).then(data=>{
       console.log(data)
@@ -25,6 +25,14 @@ const onSubmit=(e)=>{
   const url = 'http://localhost:3000/?phone='+phoneNumber+'&cost='+sum
   window.location.href= url;
 }
+
+const onMpesaSubmit=(e)=>{
+  e.preventDefault();
+  phone(phoneNumber);
+  const url ='http://localhost:5000/stkpush/'+phoneNumber+'/'+sum
+  window.location.href=url;
+}
+
 
   return (
     <div id='payment' className='container align-items-center col-md-5 mt-4' >
@@ -53,13 +61,13 @@ const onSubmit=(e)=>{
         </div>}
 
        {option==='2'&& <div>
-          <form className='add-form' onSubmit={onSubmit}>
+          <form className='add-form' onSubmit={onMpesaSubmit}>
         <div className="mb-2">
             <label >Enter Mpesa number</label>
             <input className="form-control" type='text' placeholder='phone Number' value={phoneNumber} onChange={(e)=>setphoneNumber(e.target.value)}></input>
         </div>
         <div className="mb-2">
-        <input className="form-control btn btn-block" style={{background:'blue'}} type='Submit' value='Submit'></input>
+        <button className="form-control btn btn-block" style={{background:'blue'}} type='Submit'>submit</button>
         </div>
 
           </form>
