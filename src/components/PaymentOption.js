@@ -44,7 +44,6 @@ const onMpesaSubmit=(e)=>{
           }
           }>
           <option  value='0'>Choose payment</option>
-          <option value='1'>Sasapay</option>
           <option value='2'>Mpesa</option>
         </select>
       { option==='1'&& <div>
